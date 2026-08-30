@@ -35,23 +35,34 @@ The media migration is stored in `supabase/migrations/20260830220000_media_stora
 - Time-aware FYP scoring
 - Following-aware feed
 
-### v0.4 — Social+ ✅
-- Repost / undo repost
-- Repost counts and reposted-by display
-- Reposts participate in feed ranking
-- Favorites / unfavorites
-- Saved posts page
-- Notifications for likes, follows, comments, replies, mentions, and reposts
-- Mark notifications read / mark all read
-- Nested comment replies
-- Comment reply counts through nested display
-- Comment likes
-- Automatic @mention links
-- Mention notifications
-- Share links
-- Indexed social tables for growth
+The discovery migration is stored in `supabase/migrations/20260830230000_discovery_v03.sql`.
 
-Migrations for v0.4 are stored in `supabase/migrations/` and have been applied to the connected Supabase project.
+### v0.4 — Social+ ✅
+- Reposts and undo repost
+- Repost counts and reposted-by display
+- Favorites / saved posts
+- Notifications for likes, follows, comments, replies, mentions, and reposts
+- Nested comment replies
+- Comment likes
+- Clickable @mentions and mention notifications
+- Share links
+
+### v0.5 — Creator ✅
+- Creator Center / dashboard
+- Overview analytics for views, likes, comments, reposts, favorites, shares, followers, and engagement
+- Per-post analytics
+- Top-performing content view
+- Post editing and deletion
+- Post privacy controls
+- Comment controls
+- Draft creation, loading, and deletion
+- Playlist creation, renaming, deletion, privacy, and add/remove posts
+- Profile customization
+- Private-account setting
+- Automatic post-view tracking for analytics
+- Analytics database indexes and RLS
+
+The creator migrations are stored in `supabase/migrations/` with the `creator_v05` prefix.
 
 ## Stack
 
@@ -63,7 +74,7 @@ Migrations for v0.4 are stored in `supabase/migrations/` and have been applied t
 
 The frontend uses the project's public publishable key. Never put a Supabase service-role/secret key in this repository.
 
-If you clone the project, apply the migrations in `supabase/migrations/` to your own Supabase project and update the public project URL/key in `app.js`.
+If you clone the project, apply the migrations in `supabase/migrations/` to your own Supabase project and update the public project URL/key in `app.js` and `creator.js`.
 
 ## GitHub Pages
 
@@ -74,7 +85,6 @@ If you clone the project, apply the migrations in `supabase/migrations/` to your
 
 ## Roadmap
 
-- v0.5 — Creator analytics, playlists, drafts, creator dashboard
 - v0.6 — Sounds, editing, effects, filters, stickers, Duet, Stitch
 - v0.7 — DMs and group chats
 - v0.8 — Stories
