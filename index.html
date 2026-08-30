@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111111" />
+  <title>LarpTok</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">🎭</span><span>LarpTok</span></div>
+    <div id="accountArea"><button class="ghost" id="openAuth">Log in</button></div>
+  </header>
+
+  <main>
+    <section id="authPanel" class="panel hidden">
+      <h2 id="authTitle">Welcome to LarpTok</h2>
+      <p class="muted">Create an account or log in to post, like, comment, and follow.</p>
+      <form id="authForm">
+        <input id="displayName" placeholder="Display name" maxlength="40" />
+        <input id="username" placeholder="Username" maxlength="24" pattern="[A-Za-z0-9_]+" />
+        <input id="email" type="email" placeholder="Email" required />
+        <input id="password" type="password" placeholder="Password" minlength="6" required />
+        <button class="primary" type="submit">Continue</button>
+      </form>
+      <button class="linkButton" id="toggleAuth">I already have an account</button>
+      <p id="authMessage" class="message"></p>
+    </section>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">THE LARP VIDEO COMMUNITY</p>
+        <h1>Play. Create. LARP. 🎭</h1>
+        <p>Share your characters, skits, adventures, costumes, and LARP moments.</p>
+      </div>
+    </section>
+
+    <nav class="tabs" aria-label="Feed tabs">
+      <button class="tab active" data-feed="fyp">For You</button>
+      <button class="tab" data-feed="following">Following</button>
+      <button class="tab" data-feed="latest">Latest</button>
+    </nav>
+
+    <section id="composer" class="composer hidden">
+      <textarea id="caption" maxlength="500" placeholder="What's happening in your LARP? #larp"></textarea>
+      <div class="composerRow">
+        <select id="mediaType"><option value="text">Text post</option><option value="image">Image</option><option value="video">Video</option></select>
+        <input id="mediaUrl" type="url" placeholder="Optional media URL" />
+        <button class="primary" id="postButton">Post</button>
+      </div>
+    </section>
+
+    <section id="feed" class="feed"><div class="loading">Loading LarpTok…</div></section>
+  </main>
+
+  <footer><span>© 2026 LarpTok</span><span>Built for LARP creators</span></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
