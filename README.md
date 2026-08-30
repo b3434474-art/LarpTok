@@ -13,13 +13,15 @@ A mobile-first LARP video/social community powered by GitHub and Supabase.
 - Responsive mobile-first UI
 - Row Level Security
 
-### v0.2 — Media 🟡
+### v0.2 — Media ✅
 - Image uploads
 - Video uploads
 - Supabase Storage integration
 - Video playback
 - Upload validation and progress UI
 - Share links
+- `media` Storage bucket with MIME/type and size restrictions
+- Owner-scoped upload/update/delete policies
 
 ### v0.3 — Discovery ✅
 - User, post, and hashtag search
@@ -52,7 +54,7 @@ A mobile-first LARP video/social community powered by GitHub and Supabase.
 - Edited-video uploads
 - Original sounds and sound library
 
-### v0.7 — Communication 🔜
+### v0.7 — Communication ✅
 - Direct-message conversations
 - Text messages and timestamps
 - Conversation list and unread/read state foundation
@@ -60,7 +62,27 @@ A mobile-first LARP video/social community powered by GitHub and Supabase.
 - Group-chat-ready conversation model
 - Realtime message refresh
 
-The v0.7 migration is `supabase/migrations/20260830240000_communication_v07.sql`.
+### v0.8 — Stories ✅
+- Image, video, and text stories
+- 24-hour expiration
+- Story privacy foundation
+- Views, reactions, and replies
+- RLS-protected story access
+
+### v0.9 — LIVE ✅
+- LIVE session metadata and status
+- LIVE discovery and room UI
+- External live-player/stream URL support
+- Viewer tracking foundation
+- LIVE chat
+- Moderator and report foundations
+- RLS-protected LIVE data
+
+### v1.0 — LarpTok quality release 🚀
+- Production Storage bucket and scoped Storage RLS
+- Feed/search/relationship indexes for common queries
+- Security-advisor review completed; remaining pre-existing SECURITY DEFINER warnings are documented for follow-up
+- Mobile-first UI and creator/social platform foundation
 
 ## Stack
 
@@ -84,6 +106,4 @@ If you clone the project, apply the migrations in `supabase/migrations/` to your
 
 ## Roadmap
 
-- v0.8 — Stories
-- v0.9 — LIVE
-- v1.0 — LarpTok polish, safety, moderation, performance, and LARP-specific features
+LarpTok is now at **v1.0**. Future releases should focus on moderation tooling, accessibility improvements, performance optimization, LARP-specific community features, and iterative bug fixes rather than blindly adding every social-media feature.
