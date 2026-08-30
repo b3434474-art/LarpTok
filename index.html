@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#111111" />
-  <title>LarpTok</title>
+  <title>LarpTok — LARP discovery</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,7 +16,7 @@
   <main>
     <section id="authPanel" class="panel hidden">
       <h2 id="authTitle">Welcome to LarpTok</h2>
-      <p class="muted">Create an account or log in to post, like, comment, and follow.</p>
+      <p class="muted">Create an account or log in to post, like, comment, follow, and personalize discovery.</p>
       <form id="authForm">
         <input id="displayName" placeholder="Display name" maxlength="40" />
         <input id="username" placeholder="Username" maxlength="24" pattern="[A-Za-z0-9_]+" />
@@ -31,15 +31,37 @@
     <section class="hero">
       <div>
         <p class="eyebrow">THE LARP VIDEO COMMUNITY</p>
-        <h1>Play. Create. LARP. 🎭</h1>
-        <p>Share your characters, skits, adventures, costumes, and LARP moments.</p>
+        <h1>Play. Create. Discover. 🎭</h1>
+        <p>Find LARPers, scenes, characters, costumes, adventures, and the latest LARP moments.</p>
       </div>
+    </section>
+
+    <section class="searchPanel">
+      <form id="searchForm" class="searchForm">
+        <span class="searchIcon">⌕</span>
+        <input id="searchInput" autocomplete="off" placeholder="Search LarpTok, users, posts, or #hashtags" maxlength="100" />
+        <button class="primary" type="submit">Search</button>
+      </form>
+      <div id="searchHistory" class="history"></div>
+    </section>
+
+    <section id="discovery" class="discovery hidden">
+      <div class="sectionHeader"><div><p class="eyebrow">DISCOVER</p><h2 id="discoveryTitle">Search results</h2></div><button class="ghost" id="closeDiscovery">Back to feed</button></div>
+      <div class="discoveryTabs">
+        <button class="discoveryTab active" data-result="all">All</button>
+        <button class="discoveryTab" data-result="users">Users</button>
+        <button class="discoveryTab" data-result="posts">Posts</button>
+        <button class="discoveryTab" data-result="hashtags">Hashtags</button>
+        <button class="discoveryTab" data-result="trending">Trending</button>
+      </div>
+      <div id="discoveryResults" class="results"></div>
     </section>
 
     <nav class="tabs" aria-label="Feed tabs">
       <button class="tab active" data-feed="fyp">For You</button>
       <button class="tab" data-feed="following">Following</button>
       <button class="tab" data-feed="latest">Latest</button>
+      <button class="tab" data-feed="trending">🔥 Trending</button>
     </nav>
 
     <section id="composer" class="composer hidden">
@@ -53,9 +75,7 @@
         <div class="progressTrack"><div id="uploadProgress" class="progressBar"></div></div>
         <span id="uploadText">Preparing upload…</span>
       </div>
-      <div class="composerRow">
-        <button class="primary" id="postButton">Post</button>
-      </div>
+      <div class="composerRow"><button class="primary" id="postButton">Post</button></div>
     </section>
 
     <section id="feed" class="feed"><div class="loading">Loading LarpTok…</div></section>
