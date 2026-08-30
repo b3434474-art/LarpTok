@@ -12,11 +12,10 @@
     <div class="brand"><span class="logo">🎭</span><span>LarpTok</span></div>
     <div id="accountArea"><button class="ghost" id="openAuth">Log in</button></div>
   </header>
-
   <main>
     <section id="authPanel" class="panel hidden">
       <h2 id="authTitle">Welcome to LarpTok</h2>
-      <p class="muted">Create an account or log in to post, like, comment, follow, and personalize discovery.</p>
+      <p class="muted">Create an account or log in to post, like, comment, follow, repost, and save.</p>
       <form id="authForm">
         <input id="displayName" placeholder="Display name" maxlength="40" />
         <input id="username" placeholder="Username" maxlength="24" pattern="[A-Za-z0-9_]+" />
@@ -27,7 +26,6 @@
       <button class="linkButton" id="toggleAuth">I already have an account</button>
       <p id="authMessage" class="message"></p>
     </section>
-
     <section class="hero">
       <div>
         <p class="eyebrow">THE LARP VIDEO COMMUNITY</p>
@@ -35,16 +33,14 @@
         <p>Find LARPers, scenes, characters, costumes, adventures, and the latest LARP moments.</p>
       </div>
     </section>
-
     <section class="searchPanel">
       <form id="searchForm" class="searchForm">
         <span class="searchIcon">⌕</span>
-        <input id="searchInput" autocomplete="off" placeholder="Search LarpTok, users, posts, or #hashtags" maxlength="100" />
+        <input id="searchInput" autocomplete="off" placeholder="Search users, posts, or #hashtags" maxlength="100" />
         <button class="primary" type="submit">Search</button>
       </form>
       <div id="searchHistory" class="history"></div>
     </section>
-
     <section id="discovery" class="discovery hidden">
       <div class="sectionHeader"><div><p class="eyebrow">DISCOVER</p><h2 id="discoveryTitle">Search results</h2></div><button class="ghost" id="closeDiscovery">Back to feed</button></div>
       <div class="discoveryTabs">
@@ -56,33 +52,27 @@
       </div>
       <div id="discoveryResults" class="results"></div>
     </section>
-
     <nav class="tabs" aria-label="Feed tabs">
       <button class="tab active" data-feed="fyp">For You</button>
       <button class="tab" data-feed="following">Following</button>
       <button class="tab" data-feed="latest">Latest</button>
       <button class="tab" data-feed="trending">🔥 Trending</button>
+      <button class="tab" data-feed="favorites">⭐ Saved</button>
+      <button class="tab" data-feed="notifications">🔔</button>
     </nav>
-
     <section id="composer" class="composer hidden">
-      <textarea id="caption" maxlength="500" placeholder="What's happening in your LARP? #larp"></textarea>
+      <textarea id="caption" maxlength="500" placeholder="What's happening in your LARP? #larp @username"></textarea>
       <div class="uploadBox">
         <label class="fileLabel" for="mediaFile">📁 Choose photo or video</label>
         <input id="mediaFile" type="file" accept="image/*,video/*" />
         <span id="fileName" class="muted">No file selected</span>
       </div>
-      <div id="uploadStatus" class="uploadStatus hidden">
-        <div class="progressTrack"><div id="uploadProgress" class="progressBar"></div></div>
-        <span id="uploadText">Preparing upload…</span>
-      </div>
+      <div id="uploadStatus" class="uploadStatus hidden"><div class="progressTrack"><div id="uploadProgress" class="progressBar"></div></div><span id="uploadText">Preparing upload…</span></div>
       <div class="composerRow"><button class="primary" id="postButton">Post</button></div>
     </section>
-
     <section id="feed" class="feed"><div class="loading">Loading LarpTok…</div></section>
   </main>
-
   <footer><span>© 2026 LarpTok</span><span>Built for LARP creators</span></footer>
-
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
