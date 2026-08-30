@@ -44,9 +44,16 @@
 
     <section id="composer" class="composer hidden">
       <textarea id="caption" maxlength="500" placeholder="What's happening in your LARP? #larp"></textarea>
+      <div class="uploadBox">
+        <label class="fileLabel" for="mediaFile">📁 Choose photo or video</label>
+        <input id="mediaFile" type="file" accept="image/*,video/*" />
+        <span id="fileName" class="muted">No file selected</span>
+      </div>
+      <div id="uploadStatus" class="uploadStatus hidden">
+        <div class="progressTrack"><div id="uploadProgress" class="progressBar"></div></div>
+        <span id="uploadText">Preparing upload…</span>
+      </div>
       <div class="composerRow">
-        <select id="mediaType"><option value="text">Text post</option><option value="image">Image</option><option value="video">Video</option></select>
-        <input id="mediaUrl" type="url" placeholder="Optional media URL" />
         <button class="primary" id="postButton">Post</button>
       </div>
     </section>
