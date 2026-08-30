@@ -35,8 +35,6 @@ The media migration is stored in `supabase/migrations/20260830220000_media_stora
 - Time-aware FYP scoring
 - Following-aware feed
 
-The discovery migration is stored in `supabase/migrations/20260830230000_discovery_v03.sql`.
-
 ### v0.4 — Social+ ✅
 - Reposts and undo repost
 - Repost counts and reposted-by display
@@ -62,19 +60,35 @@ The discovery migration is stored in `supabase/migrations/20260830230000_discove
 - Automatic post-view tracking for analytics
 - Analytics database indexes and RLS
 
-The creator migrations are stored in `supabase/migrations/` with the `creator_v05` prefix.
+### v0.6 — Creation ✅
+- Browser-based Creation Studio
+- Video upload and preview
+- Trim start/end points
+- Playback speed control (0.5×–2×)
+- Text overlay preview and rendered text overlay
+- Browser-side edited-video rendering with MediaRecorder where supported
+- Edited video upload to Supabase Storage
+- Post edited videos directly from the Creation Studio
+- Original sound uploads
+- Sound library
+- Use/select sounds on edited posts
+- Sound metadata attached to posts
+- Creation Studio reset and status feedback
+
+The v0.6 schema migration is `v06_creation_sounds`.
 
 ## Stack
 
 - HTML, CSS, JavaScript
 - Supabase Auth + PostgreSQL + Storage
 - GitHub Pages-ready static frontend
+- Browser MediaRecorder/Canvas APIs for lightweight client-side video rendering
 
 ## Supabase setup
 
 The frontend uses the project's public publishable key. Never put a Supabase service-role/secret key in this repository.
 
-If you clone the project, apply the migrations in `supabase/migrations/` to your own Supabase project and update the public project URL/key in `app.js` and `creator.js`.
+If you clone the project, apply the migrations in `supabase/migrations/` to your own Supabase project and update the public project URL/key in `app.js`, `creator.js`, and `creation.js`.
 
 ## GitHub Pages
 
@@ -85,7 +99,6 @@ If you clone the project, apply the migrations in `supabase/migrations/` to your
 
 ## Roadmap
 
-- v0.6 — Sounds, editing, effects, filters, stickers, Duet, Stitch
 - v0.7 — DMs and group chats
 - v0.8 — Stories
 - v0.9 — LIVE
