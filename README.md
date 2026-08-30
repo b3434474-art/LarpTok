@@ -35,7 +35,23 @@ The media migration is stored in `supabase/migrations/20260830220000_media_stora
 - Time-aware FYP scoring
 - Following-aware feed
 
-The discovery migration is stored in `supabase/migrations/20260830230000_discovery_v03.sql` and has been applied to the connected Supabase project.
+### v0.4 — Social+ ✅
+- Repost / undo repost
+- Repost counts and reposted-by display
+- Reposts participate in feed ranking
+- Favorites / unfavorites
+- Saved posts page
+- Notifications for likes, follows, comments, replies, mentions, and reposts
+- Mark notifications read / mark all read
+- Nested comment replies
+- Comment reply counts through nested display
+- Comment likes
+- Automatic @mention links
+- Mention notifications
+- Share links
+- Indexed social tables for growth
+
+Migrations for v0.4 are stored in `supabase/migrations/` and have been applied to the connected Supabase project.
 
 ## Stack
 
@@ -58,7 +74,6 @@ If you clone the project, apply the migrations in `supabase/migrations/` to your
 
 ## Roadmap
 
-- v0.4 — Reposts, favorites, notifications, comment replies, mentions
 - v0.5 — Creator analytics, playlists, drafts, creator dashboard
 - v0.6 — Sounds, editing, effects, filters, stickers, Duet, Stitch
 - v0.7 — DMs and group chats
